@@ -36,9 +36,9 @@ public class Users_model {
     @JsonProperty("password")
     private String password;
 
- @Column(name="gender")
- @JsonProperty("gender")
- private String gender;
+    @Column(name="gender")
+    @JsonProperty("gender")
+    private String gender;
 
     @Enumerated(EnumType.STRING )  //this stores the enum as a string
     @Column(name="role")

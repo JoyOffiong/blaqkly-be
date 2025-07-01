@@ -27,7 +27,8 @@ public class Product_Controller {
     public ResponseEntity<Product_model> getProductById( @PathVariable("id")  Long product_id){
       Product_model product=  repo.findById(product_id)
                 .orElseThrow(()->
-                        new ResourceNotFoundException("Product with Id does not exist"));
+
+                     new ResourceNotFoundException("Product with Id does not exist" ));
             return ResponseEntity.ok(product);
     };
 
@@ -42,7 +43,7 @@ public class Product_Controller {
     @PutMapping("/product/{id}")
     public ResponseEntity<Product_model>UpdateProduct(@PathVariable("id") Long product_id, @RequestBody Product_model products){
         Product_model updateThis = repo.findById(product_id).orElseThrow(()->
-                new ResourceNotFoundException("Product with Id does not exist"));
+                new ResourceNotFoundException("Product with Id does not exist" ));
 
         updateThis.setName(products.getName());
         updateThis.setPrice(products.getPrice());
@@ -65,9 +66,8 @@ public class Product_Controller {
 
          repo.findById(product_id)
                 .orElseThrow(()->
-                        new ResourceNotFoundException("Product with Id does not exist"));
+                        new ResourceNotFoundException("Product with Id does not exist" ));
                      repo.deleteById(product_id) ;
-        System.out.println(product_id);
         return ResponseEntity.ok("Product Successfully Deleted");
 
     }
