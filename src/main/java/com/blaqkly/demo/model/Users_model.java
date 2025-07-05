@@ -32,6 +32,11 @@ public class Users_model {
     @JsonProperty("email")
     private String email;
 
+    @Column(name = "phoneNumber", nullable= false, unique = true)
+    @JsonProperty("phoneNumber")
+    private String phoneNumber;
+
+
     @Column(name="password")
     @JsonProperty("password")
     private String password;
@@ -111,6 +116,14 @@ public class Users_model {
         this.role = role;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
 
     @Override
  public String toString() {
@@ -122,7 +135,8 @@ public class Users_model {
           ", email='" + email + '\'' +
           ", gender='" + gender + '\'' +
           ", password='" + password + '\'' +
-          ", role=" + role +
+          ", role=" + role + '\'' +
+         ", phoneNumber=" + phoneNumber +
           '}';
  }
 }
