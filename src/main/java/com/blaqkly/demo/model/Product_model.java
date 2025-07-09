@@ -17,6 +17,7 @@ public class Product_model {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
+
     @Column(name="product_id")
     @JsonProperty("product_id")
     private Long product_id;
