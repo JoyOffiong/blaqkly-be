@@ -13,8 +13,8 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOrigins("http://localhost:3000/")
-                     //   .allowedOrigins("https://blaqklyfe.netlify.app/")
+                       // .allowedOrigins("http://localhost:3000/")
+                     .allowedOrigins("https://blaqklyfe.netlify.app/")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                                         .allowedHeaders("*");
 
